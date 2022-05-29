@@ -1,0 +1,20 @@
+{
+    "name": "chrome-extension",
+    "description": "Build an Extension!",
+    "version": "1.0",
+    "manifest_version": 3,
+    "permissions": [
+        "tabs",
+        "<all_urls>",
+        "storage"
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [ "*://*/" ],
+            "js": [ "Content-script.js" ]
+        }
+    ]
+  }
