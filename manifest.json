@@ -4,17 +4,11 @@
     "version": "1.0",
     "manifest_version": 3,
     "permissions": [
-        "tabs",
-        "<all_urls>",
-        "storage"
+        "activeTab",
+        "storage",
+        "identity"
     ],
     "action": {
         "default_popup": "popup.html"
-    },
-    "content_scripts": [
-        {
-            "matches": [ "*://*/" ],
-            "js": [ "Content-script.js" ]
-        }
-    ]
-  }
+    }
+}

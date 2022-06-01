@@ -11,8 +11,7 @@ module.exports = {
     },
     entry: {
         popup: path.resolve(__dirname, './src/popup.jsx'),
-        home: path.resolve(__dirname, './src/home.jsx'),
-        learningpage: path.resolve(__dirname, './src/learningpage.jsx')
+        popupSignedIn: path.resolve(__dirname, './src/popupSignedIn.jsx')
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -54,14 +53,13 @@ module.exports = {
             chunks: ['popup']
         }),
         new HtmlWebpackPlugin({ 
-            template: './src/home.html',
-            filename: 'home.html',
-            chunks: ['home']
+            template: './src/popupSignedIn.html',
+            filename: 'popupSignedIn.html',
+            chunks: ['popupSignedIn']
         }),
         new CopyPlugin({ // build할 때 경로에 있는 파일을 dist 폴더에 복사하기 위한 plugin
             patterns: [
-              { from: './manifest.json', to: '[name][ext]' },
-              { from: './Content-script.js', to: '[name][ext]' },
+              { from: 'manifest.json', to: '[name][ext]' },
             ],
         }),
         new CleanWebpackPlugin()
