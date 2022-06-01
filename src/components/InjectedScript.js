@@ -1,3 +1,8 @@
+chrome.extension.sendMessage({
+    action: "selectVideo",
+    source: selectVideo()
+});
+
 function selectVideo() {
     document.querySelector(".lecture_select_btn").addEventListener('click', open);
 
